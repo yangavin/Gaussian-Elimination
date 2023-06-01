@@ -50,3 +50,15 @@ main{
 #result-container{
     flex-grow: 1;
 }
+
+#row-echelon-container{
+    height: 50%;
+    display: grid;
+    grid-template: 1fr 1fr 1fr / 1fr 1fr 1fr 1fr;
+    margin: 2rem 0;
+}
+
+#row-echelon-container p{
+    font-size: 2rem;
+    margin: auto;
+}
