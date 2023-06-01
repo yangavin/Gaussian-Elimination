@@ -7,6 +7,31 @@
     <title>Gaussian Elimination</title>
 </head>
 <body>
-    
+    <header>
+        <h1>Gaussian Elimination</h1>
+    </header>
+    <main>
+        <div id="system-container">
+            <p>x</p> <p>y</p> <p>z</p>
+            <input type="text" name="x1" id="x1"><input type="text" name="y1" id="y1"><input type="text" name="z1" id="z1"><p>=</p><input type="text" name="a1" id="a1">
+            <p>x</p> <p>y</p> <p>z</p>
+            <input type="text" name="x2" id="x2"><input type="text" name="y2" id="y2"><input type="text" name="z2" id="z2"><p>=</p><input type="text" name="a2" id="a2">
+            <p>x</p> <p>y</p> <p>z</p>
+            <input type="text" name="x3" id="x3"><input type="text" name="y3" id="y3"><input type="text" name="z3" id="z3"><p>=</p><input type="text" name="a3" id="a3">
+        </div>
+        <div id="result-container">
+            <h1>Row Echelon Form</h1>
+            <div id="row-echelon-container">
+                <p id="echelonx1"></p><p id="echelony1"></p><p id="echelonz1"></p><p id="echelona1"></p>
+                <p id="echelonx2"></p><p id="echelony2"></p><p id="echelonz2"></p><p id="echelona2"></p>
+                <p id="echelonx3"></p><p id="echelony3"></p><p id="echelonz3"></p><p id="echelona3"></p>
+            </div>
+            <div id="solution-container">
+                <div>x = ?</div>
+                <div>y = ?</div>
+                <div>z = ?</div>
+            </div>
+        </div>
+    </main>
 </body>
 </html>
