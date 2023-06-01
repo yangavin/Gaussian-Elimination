@@ -1,5 +1,3 @@
-
-
 body{
     font-family: 'Roboto', sans-serif;
 }
@@ -49,16 +47,36 @@ main{
 
 #result-container{
     flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+#result-container h1{
+    margin-bottom: 1rem;
 }
 
 #row-echelon-container{
     height: 50%;
     display: grid;
     grid-template: 1fr 1fr 1fr / 1fr 1fr 1fr 1fr;
-    margin: 2rem 0;
+    margin-bottom: 3rem;
 }
 
 #row-echelon-container p{
     font-size: 2rem;
-    margin: auto;
+    text-align: center;
+    margin: 0;
+    padding: 1.5rem 0;
+}
+
+#solution-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    font-size: 2.5rem;
+}
+
+#echelonz1, #echelonz2, #echelonz3{
+    border-right: solid;
 }
