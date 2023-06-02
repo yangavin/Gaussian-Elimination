@@ -43,23 +43,28 @@ function combine(multiplier, row1, row2){
 }
 
 function toRowEchelon(matrix){
-    sort(matrix);
+    const result = [];
+    for (let i = 0; i < matrix.length; i++){
+        result[i] = matrix[i].slice();
+    }
+    sort(result);
     //First Step
-    if (!matrix[1][0].equals(0)){
-        let multiplier = matrix[1][0].div(matrix[0][0]).mul(-1);
-        matrix[1] = combine(multiplier, matrix[0], matrix[1]);
+    if (!result[1][0].equals(0)){
+        let multiplier = result[1][0].div(result[0][0]).mul(-1);
+        result[1] = combine(multiplier, result[0], result[1]);
     }
-    if (!matrix[2][0].equals(0)){
-        let multiplier = matrix[2][0].div(matrix[0][0]).mul(-1);
-        matrix[2] = combine(multiplier, matrix[0], matrix[2]);
+    if (!result[2][0].equals(0)){
+        let multiplier = result[2][0].div(result[0][0]).mul(-1);
+        result[2] = combine(multiplier, result[0], result[2]);
     }
-    sort(matrix);
+    sort(result);
 
     //Second Step
-    if (!matrix[2][1].equals(0)){
-        let multiplier = matrix[2][1].div(matrix[1][1]).mul(-1);
-        matrix[2] = combine(multiplier, matrix[1], matrix[2]);
+    if (!result[2][1].equals(0)){
+        let multiplier = result[2][1].div(result[1][1]).mul(-1);
+        result[2] = combine(multiplier, result[1], result[2]);
     }
+    return result;
 }
 
 function solve(matrix){
