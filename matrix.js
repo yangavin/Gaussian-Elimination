@@ -8,7 +8,7 @@ Fraction.prototype.toString = function () {
 };
 
 let matrix = [
-    [Fraction('3'), Fraction('2'), Fraction('2'), Fraction('5')],
+    [Fraction('2'), Fraction('1'), Fraction('3'), Fraction('2')],
     [Fraction('2'), Fraction('1'), Fraction('3'), Fraction('2')],
     [Fraction('1'), Fraction('0'), Fraction('1'), Fraction('4')]
 ]
@@ -77,4 +77,15 @@ function solve(matrix){
     let y = (matrix[1][3].sub(matrix[1][2].mul(z))).div(matrix[1][1]);
     let x = (matrix[0][3].sub(matrix[0][1].mul(y)).sub(matrix[0][2].mul(z))).div(matrix[0][0]);
     return [x, y, z];
+}
+
+function isSolvable(matrix){
+    let solvable = true;
+    for (let i = 0; i < matrix.length; i++) {
+        if (matrix[i][i].equals(0)){
+            solvable = false;
+            break;
+        }
+    }
+    return solvable;
 }
