@@ -8,15 +8,16 @@ Fraction.prototype.toString = function () {
 };
 
 let matrix = [
-    [Fraction('0'), Fraction('2'), Fraction('2'), Fraction('5')],
+    [Fraction('3'), Fraction('2'), Fraction('2'), Fraction('5')],
     [Fraction('2'), Fraction('1'), Fraction('3'), Fraction('2')],
-    [Fraction('0'), Fraction('0'), Fraction('1'), Fraction('4')]
+    [Fraction('1'), Fraction('0'), Fraction('1'), Fraction('4')]
 ]
 
 function printMatrix(matrix){
     for (let i = 0; i < 3; i++) {
         for (let j = 0; j < 4; j++) {
             process.stdout.write(matrix[i][j].toString());
+            process.stdout.write(' ');
         }
         console.log();
     }
@@ -49,4 +50,24 @@ function combine(multiplier, row1, row2){
         combined.push((row1[i].mul(multiplier)).add(row2[i]));
     }
     return combined;
+}
+
+function toRowEchelon(matrix){
+    sort(matrix);
+    //First Step
+    if (!matrix[1][0].equals(0)){
+        let multiplier = matrix[1][0].div(matrix[0][0]).mul(-1);
+        matrix[1] = combine(multiplier, matrix[0], matrix[1]);
+    }
+    if (!matrix[2][0].equals(0)){
+        let multiplier = matrix[2][0].div(matrix[0][0]).mul(-1);
+        matrix[2] = combine(multiplier, matrix[0], matrix[2]);
+    }
+    sort(matrix);
+
+    //Second Step
+    if (!matrix[2][1].equals(0)){
+        let multiplier = matrix[2][1].div(matrix[1][1]).mul(-1);
+        matrix[2] = combine(multiplier, matrix[1], matrix[2]);
+    }
 }
