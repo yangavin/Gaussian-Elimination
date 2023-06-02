@@ -13,6 +13,21 @@ let matrix = [
     [Fraction('0'), Fraction('0'), Fraction('1'), Fraction('4')]
 ]
 
+function printMatrix(matrix){
+    for (let i = 0; i < 3; i++) {
+        for (let j = 0; j < 4; j++) {
+            process.stdout.write(matrix[i][j].toString());
+        }
+        console.log();
+    }
+}
+
+function rowSwap(matrix, row1Index, row2Index){
+    let row = matrix[row1Index];
+    matrix[row1Index] = matrix[row2Index];
+    matrix[row2Index] = row;
+}
+
 function sort(matrix) {
     for (let i = 0; i < 3; i++) {
         if (!matrix[i][0].equals(0)) {
@@ -28,17 +43,10 @@ function sort(matrix) {
     }
 }
 
-function rowSwap(matrix, row1Index, row2Index){
-    let row = matrix[row1Index];
-    matrix[row1Index] = matrix[row2Index];
-    matrix[row2Index] = row;
-}
-
-function printMatrix(matrix){
-    for (let i = 0; i < 3; i++) {
-        for (let j = 0; j < 4; j++) {
-            process.stdout.write(matrix[i][j].toString());
-        }
-        console.log();
+function combine(multiplier, row1, row2){
+    let combined = [];
+    for (let i = 0; i < 4; i++) {
+        combined.push((row1[i].mul(multiplier)).add(row2[i]));
     }
+    return combined;
 }
