@@ -1,4 +1,4 @@
-const { Fraction } = require('mathjs');
+const { Fraction } = math;
 
 Fraction.prototype.toString = function () {
     if (this.d === 1){
