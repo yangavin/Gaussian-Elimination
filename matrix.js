@@ -7,19 +7,9 @@ Fraction.prototype.toString = function () {
     return `${this.n * this.s}/${this.d}`;
 };
 
-let matrix = [
-    [Fraction('2'), Fraction('1'), Fraction('3'), Fraction('2')],
-    [Fraction('2'), Fraction('1'), Fraction('3'), Fraction('2')],
-    [Fraction('1'), Fraction('0'), Fraction('1'), Fraction('4')]
-]
-
 function printMatrix(matrix){
     for (let i = 0; i < 3; i++) {
-        for (let j = 0; j < 4; j++) {
-            process.stdout.write(matrix[i][j].toString());
-            process.stdout.write(' ');
-        }
-        console.log();
+        console.log('[', matrix[i][0].toString(), matrix[i][1].toString(), matrix[i][2].toString(), matrix[i][3].toString(), ']');
     }
 }
 
