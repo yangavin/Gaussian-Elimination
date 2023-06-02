@@ -71,3 +71,10 @@ function toRowEchelon(matrix){
         matrix[2] = combine(multiplier, matrix[1], matrix[2]);
     }
 }
+
+function solve(matrix){
+    let z = matrix[2][3].div(matrix[2][2]);
+    let y = (matrix[1][3].sub(matrix[1][2].mul(z))).div(matrix[1][1]);
+    let x = (matrix[0][3].sub(matrix[0][1].mul(y)).sub(matrix[0][2].mul(z))).div(matrix[0][0]);
+    return [x, y, z];
+}
