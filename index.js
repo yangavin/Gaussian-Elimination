@@ -1,5 +1,10 @@
 //Get all necessary elements
 const rowEchelonValues = Array.from(document.querySelectorAll('.row-echelon-value'));
+const solutionContainer = document.querySelector('#solution-container');
+const unSolvableMessage = document.querySelector('#unsolvable-message');
+const xLabel = document.querySelector('#x');
+const yLabel = document.querySelector('#y');
+const zLabel = document.querySelector('#z');
 
 const inputMatrix = [];
 for (let i = 0; i < inputs.length; i += 4) {
@@ -36,18 +41,27 @@ for (let i = 0; i < 3; i++) {
             }
             matrix[i][j] = value;
             rowEchelon = toRowEchelon(matrix);
-            updateRowEchelon();
-            //Debugging
-            printMatrix(matrix);
-            console.log(' ');
+            updateResult();
         })
     }
 }
 
-function updateRowEchelon() {
+function updateResult() {
     for (let i = 0; i < 3; i++) {
         for (let j = 0; j < 4; j++) {
             outputMatrix[i][j].textContent = rowEchelon[i][j].toString();
         }
+    }
+    if (isSolvable(rowEchelon)){
+        let answers = solve(rowEchelon);
+        xLabel.textContent = `x = ${answers[0]}`;
+        yLabel.textContent = `y = ${answers[1]}`;
+        zLabel.textContent = `z = ${answers[2]}`;
+        solutionContainer.style.display = 'flex';
+        unSolvableMessage.style.display = 'none';
+    }
+    else{
+        solutionContainer.style.display = 'none';
+        unSolvableMessage.style.display = 'block';
     }
 }

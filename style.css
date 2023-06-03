@@ -28,7 +28,7 @@ main{
     "x2 y2 z2 . ."
     "x2-input y2-input z2-input e2 a2"
     "x3 y3 z3 . ."
-    "x3-input y3-input z3-input e3 a3"
+    "x3-input y3-input z3-input e3 a3";
 }
 
 #system-container *{
@@ -70,8 +70,10 @@ main{
 }
 
 #solution-container{
-    display: flex;
+    text-align: center;
+    display: none; /*to be toggled to flex by js */
     flex-direction: column;
+    justify-content: center;
     align-items: center;
     gap: 1rem;
     font-size: 2.5rem;
@@ -79,4 +81,10 @@ main{
 
 .third-value{
     border-right: solid;
+}
+
+#unsolvable-message{
+    text-align: center;
+    font-size: 2rem;
+    height: 176px;
 }
