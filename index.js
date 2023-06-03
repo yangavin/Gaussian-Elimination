@@ -70,12 +70,12 @@ function updateResult() {
 
 let isDarkMode = true;
 modeButton.addEventListener('click', ()=>{
+    isDarkMode = !isDarkMode;
     if (isDarkMode){
         modeButton.textContent = 'Light Mode';
     } else{
         modeButton.textContent = 'Dark Mode'
     }
-    isDarkMode = !isDarkMode;
     body.classList.toggle('dark-mode');
     modeButton.classList.toggle('dark-mode');
     inputs.forEach((input)=>{
