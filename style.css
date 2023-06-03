@@ -88,3 +88,28 @@ main{
     font-size: 2rem;
     height: 176px;
 }
+
+@media (max-width: 1142px){
+    main{
+        flex-direction: column;
+        align-items: center;
+    }
+    #system-container input{
+        max-width: 200px;
+    }
+}
+@media (max-width: 982px){
+    #system-container input{
+        max-width: 170px;
+    }
+}
+@media (max-width: 700px){
+    #system-container input{
+        max-width: 80px;
+    }
+}
+@media (max-width: 360px){
+    #system-container input{
+        max-width: 50px;
+    }
+}
