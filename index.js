@@ -5,6 +5,8 @@ const unSolvableMessage = document.querySelector('#unsolvable-message');
 const xLabel = document.querySelector('#x');
 const yLabel = document.querySelector('#y');
 const zLabel = document.querySelector('#z');
+const modeButton = document.querySelector('#color-mode');
+const body = document.querySelector('body');
 
 const inputMatrix = [];
 for (let i = 0; i < inputs.length; i += 4) {
@@ -65,3 +67,18 @@ function updateResult() {
         unSolvableMessage.style.display = 'block';
     }
 }
+
+let isDarkMode = true;
+modeButton.addEventListener('click', ()=>{
+    isDarkMode = !isDarkMode;
+    body.classList.toggle('dark-mode');
+    modeButton.classList.toggle('dark-mode');
+    inputs.forEach((input)=>{
+        input.classList.toggle('dark-mode');
+    });
+    if (isDarkMode){
+        modeButton.textContent = 'Light Mode';
+    } else{
+        modeButton.textContent = 'Dark Mode';
+    }
+})

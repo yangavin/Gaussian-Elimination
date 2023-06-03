@@ -7,4 +7,5 @@ systemGridItems.forEach((child)=>{
 
 inputs.forEach((input)=>{
     input.setAttribute('placeholder', '0');
+    input.classList.toggle('dark-mode');
 })

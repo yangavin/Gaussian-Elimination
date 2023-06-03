@@ -8,6 +8,23 @@ h1{
     margin: .2rem;
 }
 
+#color-mode{
+    position: absolute;
+    margin: 1rem;
+    top: 0;
+    right: 0;
+    border: none;
+    border-radius: 1rem;
+    padding: .5rem 1rem;
+    background-color: #484848;
+    color:rgb(248, 248, 248);
+}
+
+#color-mode.dark-mode{
+    background-color: #e5e5e5;
+    color: black;
+    font-weight: bold;
+}
 
 #title{
     font-size: 2.5rem;
@@ -41,6 +58,8 @@ main{
 }
 
 #system-container input{
+    border-radius: .5rem;
+    margin: 0 .2rem;
     font-size: 2rem;
     max-width: 125px;
 }
@@ -87,6 +106,19 @@ main{
     text-align: center;
     font-size: 2rem;
     height: 176px;
+}
+
+body.dark-mode{
+    background-color: #111827;
+    color: #E2E2E2;
+}
+#system-container input.dark-mode{
+    border: none;
+    color: #ffffff;
+    background-color: #2D9BFF;
+}
+::placeholder{
+    color: rgb(215, 215, 215);
 }
 
 @media (max-width: 1142px){
