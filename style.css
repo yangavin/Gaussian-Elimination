@@ -77,6 +77,6 @@ main{
     font-size: 2.5rem;
 }
 
-#echelonz1, #echelonz2, #echelonz3{
+.third-value{
     border-right: solid;
 }
