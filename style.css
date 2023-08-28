@@ -120,11 +120,11 @@ body.dark-mode{
 }
 #system-container input.dark-mode{
     border: none;
-    color: #ffffff;
-    background-color: #2D9BFF;
+    color: #2d2d2d;
+    background-color: #cdedff;
 }
 ::placeholder{
-    color: rgb(215, 215, 215);
+    color: rgb(104, 104, 104);
 }
 
 @media (max-width: 1142px){
